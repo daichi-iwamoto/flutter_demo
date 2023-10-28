@@ -1,16 +1,11 @@
 # flutter_demo
+Flutter 勉強用リポジトリ
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 基礎
+- Text, Row, Colomn Widget の使い方
+  - https://github.com/daichi-iwamoto/flutter_domo/pull/2
+- Container, Stack Widget の使い方
+  - https://github.com/daichi-iwamoto/flutter_domo/pull/6
+- Stateful, Stateless Widget の基礎
+  - https://github.com/daichi-iwamoto/flutter_domo/pull/9
+  - https://github.com/daichi-iwamoto/flutter_domo/pull/12
