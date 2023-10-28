@@ -136,18 +136,38 @@ class _GestureDetectorExample extends State<Counter> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        ElevatedButton(
-          onPressed: increment,
-          child: Container(
-            width: 160,
-            height: 60,
-            alignment: AlignmentDirectional.center,
-            child: TextExample('Counter $count'),
-          ),
+        CounterIncrementor(onPressed: increment),
+        Container(
+          width: 100,
+          height: 40,
+          alignment: AlignmentDirectional.center,
+          child: TextExample('$count'),
         ),
       ],
+    );
+  }
+}
+
+// State の変更を行う View 部分を担当するクラス
+// Stateless Widget を継承している
+class CounterIncrementor extends StatelessWidget {
+  const CounterIncrementor({required this.onPressed, super.key});
+
+  // State の変更を行うコールバック関数を引数として受け取る
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      child: Container(
+        width: 100,
+        height: 40,
+        alignment: AlignmentDirectional.center,
+        child: const TextExample('Counter'),
+      ),
     );
   }
 }
