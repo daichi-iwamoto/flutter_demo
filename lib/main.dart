@@ -14,6 +14,8 @@ class DemoApp extends StatelessWidget {
       children: <Widget>[
         TextExample('Text Example'),
         RowExample(),
+        StackExample(),
+        ContainerExample(),
       ],
     );
   }
@@ -59,6 +61,53 @@ class RowExample extends StatelessWidget {
         TextExample('Row02'),
         TextExample('Row03'),
       ],
+    );
+  }
+}
+
+// Stack Widget Example
+// 重ねて表示する為のWidget
+class StackExample extends StatelessWidget {
+  const StackExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: AlignmentDirectional.center,
+      children: <Widget>[
+        Container(
+          width: 120,
+          height: 100,
+          color: Colors.red,
+        ),
+        Container(
+          width: 10,
+          height: 120,
+          color: Colors.green,
+        ),
+        Container(
+          width: 80,
+          height: 80,
+          color: Colors.blue,
+        ),
+      ],
+    );
+  }
+}
+
+class ContainerExample extends StatelessWidget {
+  const ContainerExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 160,
+      height: 80,
+      color: Colors.red,
+      alignment: AlignmentDirectional.bottomEnd,
+      padding: const EdgeInsets.all(10),
+      transform: Matrix4.rotationZ(0.30),
+      child: const TextExample('Container'),
     );
   }
 }
