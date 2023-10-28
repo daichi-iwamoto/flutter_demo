@@ -16,6 +16,7 @@ class DemoApp extends StatelessWidget {
         RowExample(),
         StackExample(),
         ContainerExample(),
+        Counter(),
       ],
     );
   }
@@ -108,6 +109,45 @@ class ContainerExample extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       transform: Matrix4.rotationZ(0.30),
       child: const TextExample('Container'),
+    );
+  }
+}
+
+// Stateful Widget Example
+// 状態を持つ Widget
+// 状態を変更する為には StatefulWidget を継承したクラスと State を継承したクラスの2つが必要
+class Counter extends StatefulWidget {
+  const Counter({super.key});
+
+  @override
+  State<Counter> createState() => _GestureDetectorExample();
+}
+
+// State を継承するクラス
+class _GestureDetectorExample extends State<Counter> {
+  int count = 0;
+
+  void increment() {
+    setState(() {
+      count++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: <Widget>[
+        ElevatedButton(
+          onPressed: increment,
+          child: Container(
+            width: 160,
+            height: 60,
+            alignment: AlignmentDirectional.center,
+            child: TextExample('Counter $count'),
+          ),
+        ),
+      ],
     );
   }
 }
